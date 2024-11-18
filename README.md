@@ -8,9 +8,13 @@ Just run
   $ ./translate.sh -loop -noprompt -user=test -retry
 ```
 
-## What it does
+## What is it
 
-It feeds bunch of common dutch words, and prompts for answer. It checks if correct, and if so, it increases the number of this word being correctly answered. If false answer was provides, it will store the wrong answer in the file, so that it can be later practiced again.
+Simple script that can help practice dutch.
+
+It uses a list of common dutch words and prompts user for an answer. Then it checks if the answer is correct
+ - if so, it increases the number of this word being correctly answered,
+ - otherwise, it will store the wrong answer in the (wall of shame) file, so that it can be later practiced again.
 
 ## The content
 
@@ -21,8 +25,7 @@ It feeds bunch of common dutch words, and prompts for answer. It checks if corre
   - `-noprompt` will remove prompt for line selection	
   - `-user=X` will store all correct and incorrect answers of this user as files `.fail` and `.success` inside the `saves` folder
 - `check_and_save.sh` does exactly that - saves the correct and wrong answers into saves/user files, so that there can be statistics and training on wrong anwsers
-- `random.sh` is used in a 
-
+- `random.sh` is just spitting out a random file - is used only from `translate.sh`
 - `./translate_from_google.sh nl en kijk`
   - it uses web google translation
   - can be directly called by providing: `src_lan dest_lan word(s)` as parameters (where language is a short code like `en`)
